@@ -220,14 +220,14 @@ this.render();
 
      if( ! countryofissue.toUpperCase().match('[A-Z]{2}' )){
         validatedcorrectly = false ; 
-         this.$el.find('#countryissue').css({ "border": "2px solid red "  }) ; 
+        // this.$el.find('#countryissue').css({ "border": "2px solid red "  }) ; 
+        this.$el.find('#countryissue').addClass("com_sabre_tn_redapp_sdk360_pricingwidget.pricingwidget_error"); 
 
-
-       this.$el.find('#countryissue').addClass("error"); 
+       //this.$el.find('#countryissue').addClass("error"); 
 
      }else {
-         this.$el.find('#countryissue').css({ "border":  "ridge"  })
-       this.$el.find('#countryissue').removeClass("error");
+      //   this.$el.find('#countryissue').css({ "border":  "ridge"  })
+       this.$el.find('#countryissue').removeClass("com_sabre_tn_redapp_sdk360_pricingwidget.pricingwidget_error");
      }
     
      if (! countrynacionality.toUpperCase().match('[A-Z]{2}') ){
