@@ -1,0 +1,8 @@
+<CFBundle>
+	<RedApp id="com.sabre.tn.redapp.sdk360.pricingwidget" >
+	
+	<Authorization name="com.sabre.edge.cf.sws.SWS" threshold="30" metric="tpm"/>
+	<Authorization name="com.sabre.edge.cf.emu.ExecuteInEmulator" threshold="1"  />
+	
+	</RedApp>
+</CFBundle>

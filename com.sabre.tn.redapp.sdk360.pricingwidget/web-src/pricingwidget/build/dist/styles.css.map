@@ -1,0 +1,1 @@
+{"version":3,"sources":["styles.less"],"names":[],"mappings":"AACA,gDAIQ,OAAA,IAAA,MAAA","file":"styles.css","sourcesContent":["// Provide styles below\ncom_sabre_tn_redapp_sdk360_pricingwidget{\n\n    .error {\n        \n        border:  2px solid red\n    }\n\n\n}"]}

@@ -1,0 +1,100 @@
+<!-- Provide templates in this directory -->
+<div class="com_sabre_tn_redapp_sdk360_pricingwidget" >
+
+<form >
+  <div class="form-group">
+      <label for="segments">Segment Number :</label>
+      <select class="form-control" id="segments" > {{{segmentcomobo}}}      </select>
+
+  </div>
+
+  <div class="form-group">
+      <label for="documenttype">Document Type  :</label>
+      <select class="form-control" id="documenttype">
+     <option value="A" > Alien resident card </option>      
+     <option value="c" > Permanent resident card </option>   
+     <option value="D" > Taiwan travel permit for Chinese mainland residents </option>   
+     <option value="DB" > Secure Flight Passenger Data </option>   
+     <option value="I" > National ID </option>  
+     <option value="P" selected > Passport </option>
+     <option value="PD" > Diplomatic Passport </option>
+     <option value="PM" > Mission/Service Passport </option>
+     <option value="PS" > Special Passport </option>
+     <option value="T" > Refugee travel document and re-entry permit, US Travel document </option>
+     <option value="F" > Facilitation document </option>
+     <option value="M" > Military </option>
+     <option value="N" > Naturalization certificate </option>
+     <option value="V" > Border crossing card </option>
+    </select> 
+
+  </div>
+
+  <div class="form-group">
+      <label for="countryissue"> Country of Issue  :</label>
+      <input type="text" class="form-control" id="countryissue" maxlength="2" pattern="[A-Z]{2}">
+
+  </div>
+
+  <div class="form-group">
+      <label for="documentnumber">Document Number  :</label>
+      <input type="text" class="form-control" id="documentnumber">
+
+  </div>
+
+  <div class="form-group">
+      <label for="countrynacionality"> Document nationality country:</label>
+      <input type="text" class="form-control" id="countrynacionality" maxlength="2" pattern="[A-Z]{2}">
+
+  </div>
+
+
+  <div class="form-group">
+      <label for="dateofbirth"> Date Of Birth:</label>
+      <input type="text" class="form-control" id="dateofbirth" placeholder="15AUG1947">
+
+  </div>
+
+
+  <div class="form-group">
+      <label for="gender"> Gender :</label>
+      <select id="gender" class="form-control"> <option value="M"> M </option> <option value="F"> F </option>  </select>
+  </div>
+
+  <div class="form-group">
+      <label for="documentexpdate"> Document expiration date :</label>
+      <input type="text" class="form-control" id="documentexpdate" placeholder="30SEP2011">
+
+  </div>
+
+  <div class="form-group">
+      <label for="lastname"> Last Name :</label>
+      <input type="text" class="form-control" id="lastname">
+
+  </div>
+
+  <div class="form-group">
+      <label for="firstname"> First Name :</label>
+      <input type="text" class="form-control" id="firstname">
+
+  </div>
+
+  <div class="form-group">
+      <label for="middlename"> Middle Name :</label>
+      <input type="text" class="form-control" id="middlename">
+
+  </div>
+
+  <div class="form-group">
+      <label for="passenger"> Passenger :</label>
+      <select class="form-control" id="passenger"> {{{paxcombo}}}</select>
+
+  </div>
+
+  <button type="button" class="btn btn-default btn-block" id="adddocsbtn" style='color:#23826F'> Add DOCS </button>
+
+</form>
+
+</div>
+
+
+

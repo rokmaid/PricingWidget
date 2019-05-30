@@ -1,0 +1,10 @@
+{
+  "moduleNameMapper": {
+    "^(pricingwidget/Context)$": "meta\\ngv-jest\\pricingwidget\\Context.js",
+    "^(pricingwidget)$": "meta\\ngv-jest\\pricingwidget\\views\\index.js",
+    "^(pricingwidget/index)$": "meta\\ngv-jest\\pricingwidget\\index.js",
+    "^(pricingwidget/Main)$": "meta\\ngv-jest\\pricingwidget\\Main.js",
+    "^(pricingwidget/views/PricingTile)$": "meta\\ngv-jest\\pricingwidget\\views\\PricingTile.js",
+    "^(pricingwidget/views/PricingView)$": "meta\\ngv-jest\\pricingwidget\\views\\PricingView.js"
+  }
+}

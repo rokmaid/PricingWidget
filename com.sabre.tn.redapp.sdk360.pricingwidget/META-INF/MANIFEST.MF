@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Pricingwidget
+Bundle-SymbolicName: com.sabre.tn.redapp.sdk360.pricingwidget;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.sabre.tn.redapp.sdk360.pricingwidget.Activator
+Bundle-Vendor: Sabre Travel Network
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ com.sabre.edge.dynamo.ui,
+ com.sabre.edge.redapp.contactdetails,
+ com.sabre.edge.cf.core
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Automatic-Module-Name: com.sabre.tn.redapp.sdk360.pricingwidget
+Bundle-ActivationPolicy: lazy
