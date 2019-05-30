@@ -220,14 +220,13 @@ this.render();
 
      if( ! countryofissue.toUpperCase().match('[A-Z]{2}' )){
         validatedcorrectly = false ; 
-        // this.$el.find('#countryissue').css({ "border": "2px solid red "  }) ; 
-        this.$el.find('#countryissue').addClass("com_sabre_tn_redapp_sdk360_pricingwidget.pricingwidget_error"); 
-
+        this.$el.find('#countryissue').css({ "border": "2px solid red "  }) ; 
+   
        //this.$el.find('#countryissue').addClass("error"); 
 
      }else {
-      //   this.$el.find('#countryissue').css({ "border":  "ridge"  })
-       this.$el.find('#countryissue').removeClass("com_sabre_tn_redapp_sdk360_pricingwidget.pricingwidget_error");
+         this.$el.find('#countryissue').css({ "border":  "0.5px groove"  })
+      // this.$el.find('#countryissue').removeClass("._error");
      }
     
      if (! countrynacionality.toUpperCase().match('[A-Z]{2}') ){
@@ -237,7 +236,7 @@ this.render();
 
      }else {
 
-        this.$el.find('#countrynacionality').css({ "border": "ridge "  });
+        this.$el.find('#countrynacionality').css({ "border": "0.5px groove"  });
      }
 
      if(! dateofbirth.toUpperCase().match('[0-9]{2}[A-Z]{3}[0-9]{4}')){
@@ -245,7 +244,7 @@ this.render();
         this.$el.find('#dateofbirth').css({ "border": "2px solid red "  }); 
      }else {
 
-        this.$el.find('#dateofbirth').css({ "border": "ridge "  });
+        this.$el.find('#dateofbirth').css({ "border": "0.5px groove"  });
      }
 
      if(! documentexpdate.toUpperCase().match('[0-9]{2}[A-Z]{3}[0-9]{4}')){
@@ -254,9 +253,10 @@ this.render();
 
      }else {
 
-        this.$el.find('#documentexpdate').css({ "border": "ridge "  }); 
+        this.$el.find('#documentexpdate').css({ "border": "0.5px groove"  }); 
      }
 
+   
     return validatedcorrectly  ; 
  }
 

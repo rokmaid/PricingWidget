@@ -1,16 +1,25 @@
 <!-- Provide templates in this directory -->
 <div class="com_sabre_tn_redapp_sdk360_pricingwidget" >
 
+<style>
+     ._error {
+        
+        border:  2px solid red
+    }
+        
+</style>
+
+
 <form >
   <div class="form-group">
       <label for="segments">Segment Number :</label>
-      <select class="form-control" id="segments" > {{{segmentcomobo}}}      </select>
+      <select class="form-control" id="segments" style="border: 0.5px groove"> {{{segmentcomobo}}}      </select>
 
   </div>
 
   <div class="form-group">
       <label for="documenttype">Document Type  :</label>
-      <select class="form-control" id="documenttype">
+      <select class="form-control" id="documenttype" style="border: 0.5px groove">
      <option value="A" > Alien resident card </option>      
      <option value="c" > Permanent resident card </option>   
      <option value="D" > Taiwan travel permit for Chinese mainland residents </option>   
@@ -31,62 +40,62 @@
 
   <div class="form-group">
       <label for="countryissue"> Country of Issue  :</label>
-      <input type="text" class="form-control" id="countryissue" maxlength="2" pattern="[A-Z]{2}">
+      <input type="text" class="form-control" id="countryissue" maxlength="2" style="border: 0.5px groove">
 
   </div>
 
   <div class="form-group">
       <label for="documentnumber">Document Number  :</label>
-      <input type="text" class="form-control" id="documentnumber">
+      <input type="text" class="form-control" id="documentnumber" style="border: 0.5px groove">
 
   </div>
 
   <div class="form-group">
       <label for="countrynacionality"> Document nationality country:</label>
-      <input type="text" class="form-control" id="countrynacionality" maxlength="2" pattern="[A-Z]{2}">
+      <input type="text" class="form-control" id="countrynacionality" maxlength="2" style="border: 0.5px groove">
 
   </div>
 
 
   <div class="form-group">
       <label for="dateofbirth"> Date Of Birth:</label>
-      <input type="text" class="form-control" id="dateofbirth" placeholder="15AUG1947">
+      <input type="text" class="form-control" id="dateofbirth" placeholder="15AUG1947" style="border: 0.5px groove">
 
   </div>
 
 
   <div class="form-group">
       <label for="gender"> Gender :</label>
-      <select id="gender" class="form-control"> <option value="M"> M </option> <option value="F"> F </option>  </select>
+      <select id="gender" class="form-control" style="border: 0.5px groove"><option value="M"> M </option> <option value="F"> F </option>  </select>
   </div>
 
   <div class="form-group">
       <label for="documentexpdate"> Document expiration date :</label>
-      <input type="text" class="form-control" id="documentexpdate" placeholder="30SEP2011">
+      <input type="text" class="form-control" id="documentexpdate" placeholder="30SEP2011" style="border: 0.5px groove">
 
   </div>
 
   <div class="form-group">
       <label for="lastname"> Last Name :</label>
-      <input type="text" class="form-control" id="lastname">
+      <input type="text" class="form-control" id="lastname" style="border: 0.5px groove">
 
   </div>
 
   <div class="form-group">
       <label for="firstname"> First Name :</label>
-      <input type="text" class="form-control" id="firstname">
+      <input type="text" class="form-control" id="firstname" style="border: 0.5px groove">
 
   </div>
 
   <div class="form-group">
       <label for="middlename"> Middle Name :</label>
-      <input type="text" class="form-control" id="middlename">
+      <input type="text" class="form-control" id="middlename" style="border: 0.5px groove">
 
   </div>
 
   <div class="form-group">
       <label for="passenger"> Passenger :</label>
-      <select class="form-control" id="passenger"> {{{paxcombo}}}</select>
+      <select class="form-control" id="passenger" style="border: 0.5px groove"> {{{paxcombo}}}</select>
 
   </div>
 
