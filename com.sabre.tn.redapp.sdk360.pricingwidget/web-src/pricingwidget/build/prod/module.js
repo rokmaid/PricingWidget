@@ -215,7 +215,7 @@ define("pricingwidget/views/PricingView", ["require", "exports", "sabre-ngv-app/
             }
             else {
                 //   this.$el.find('#documentexpdate').css({ "border": "0.5px groove"  }); 
-                this.$el.find('#documentexpdate').remove("pricingwidget_error");
+                this.$el.find('#documentexpdate').removeClass("pricingwidget_error");
             }
             return validatedcorrectly;
         };
