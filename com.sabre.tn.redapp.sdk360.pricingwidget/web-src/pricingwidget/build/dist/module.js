@@ -184,33 +184,38 @@ define("pricingwidget/views/PricingView", ["require", "exports", "sabre-ngv-app/
             var documentexpdate = this.$el.find('#documentexpdate').val();
             if (!countryofissue.toUpperCase().match('[A-Z]{2}')) {
                 validatedcorrectly = false;
-                this.$el.find('#countryissue').css({ "border": "2px solid red " });
-                //this.$el.find('#countryissue').addClass("error"); 
+                //   this.$el.find('#countryissue').css({ "border": "2px solid red "  }) ; 
+                this.$el.find('#countryissue').addClass("pricingwidget_error");
             }
             else {
-                this.$el.find('#countryissue').css({ "border": "0.5px groove" });
-                // this.$el.find('#countryissue').removeClass("._error");
+                //  this.$el.find('#countryissue').css({ "border":  "0.5px groove"  })
+                this.$el.find('#countryissue').removeClass("pricingwidget_error");
             }
             if (!countrynacionality.toUpperCase().match('[A-Z]{2}')) {
                 validatedcorrectly = false;
-                this.$el.find('#countrynacionality').css({ "border": "2px solid red " });
+                //    this.$el.find('#countrynacionality').css({ "border": "2px solid red "  }); 
+                this.$el.find('#countrynacionality').addClass("pricingwidget_error");
             }
             else {
-                this.$el.find('#countrynacionality').css({ "border": "0.5px groove" });
+                this.$el.find('#countrynacionality').removeClass("pricingwidget_error");
             }
             if (!dateofbirth.toUpperCase().match('[0-9]{2}[A-Z]{3}[0-9]{4}')) {
                 validatedcorrectly = false;
-                this.$el.find('#dateofbirth').css({ "border": "2px solid red " });
+                //   this.$el.find('#dateofbirth').css({ "border": "2px solid red "  }); 
+                this.$el.find('#dateofbirth').addClass("pricingwidget_error");
             }
             else {
-                this.$el.find('#dateofbirth').css({ "border": "0.5px groove" });
+                //  this.$el.find('#dateofbirth').css({ "border": "0.5px groove"  });
+                this.$el.find('#dateofbirth').removeClass("pricingwidget_error");
             }
             if (!documentexpdate.toUpperCase().match('[0-9]{2}[A-Z]{3}[0-9]{4}')) {
                 validatedcorrectly = false;
-                this.$el.find('#documentexpdate').css({ "border": "2px solid red " });
+                //  this.$el.find('#documentexpdate').css({ "border": "2px solid red "  });
+                this.$el.find('#documentexpdate').addClass("pricingwidget_error");
             }
             else {
-                this.$el.find('#documentexpdate').css({ "border": "0.5px groove " });
+                //   this.$el.find('#documentexpdate').css({ "border": "0.5px groove"  }); 
+                this.$el.find('#documentexpdate').remove("pricingwidget_error");
             }
             return validatedcorrectly;
         };
