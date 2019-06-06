@@ -15,7 +15,7 @@ import {AbstractModel} from "sabre-ngv-app/app/AbstractModel";
 export class PricingTile extends Tile<AbstractModel> implements WithoutFocusOnClick {
 
     selfDrawerContextModelPropagated() {
-        this.setDataContent('Add Visa Information ');
+        this.setDataContent('Add Passport Information ');
     }
 
 

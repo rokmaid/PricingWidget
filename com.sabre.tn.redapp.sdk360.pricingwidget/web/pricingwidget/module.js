@@ -42,7 +42,7 @@ define("pricingwidget/views/PricingTile", ["require", "exports", "sabre-ngv-app/
             return _super !== null && _super.apply(this, arguments) || this;
         }
         PricingTile.prototype.selfDrawerContextModelPropagated = function () {
-            this.setDataContent('Add Visa Information ');
+            this.setDataContent('Add Passport Information ');
         };
         return PricingTile;
     }(Tile_1.Tile));
@@ -54,7 +54,7 @@ define("pricingwidget/views/PricingTile", ["require", "exports", "sabre-ngv-app/
     ], PricingTile);
     exports.PricingTile = PricingTile;
 });
-define("pricingwidget/views/PricingView", ["require", "exports", "sabre-ngv-app/app/AbstractView", "sabre-ngv-core/decorators/classes/view/Template", "sabre-ngv-app/app/services/impl/SrwAsyncApi", "sabre-ngv-app/app/services/impl/SrwSyncApi", "pricingwidget/Context"], function (require, exports, AbstractView_1, Template_1, SrwAsyncApi_1, SrwSyncApi_1, Context_1) {
+define("pricingwidget/views/PricingView", ["require", "exports", "sabre-ngv-app/app/AbstractView", "sabre-ngv-core/decorators/classes/view/Template", "sabre-ngv-app/app/services/impl/SrwAsyncApi", "sabre-ngv-app/app/services/impl/SrwSyncApi", "pricingwidget/Context", "pricingwidget/Context"], function (require, exports, AbstractView_1, Template_1, SrwAsyncApi_1, SrwSyncApi_1, Context_1, Context_2) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var PricingView = (function (_super) {
@@ -160,8 +160,16 @@ define("pricingwidget/views/PricingView", ["require", "exports", "sabre-ngv-app/
             else {
                 middlename = "/" + this.$el.find('#middlename').val();
             }
+            var initialformatnumber;
+            var selectedcarrier = this.getCarrier(segmentvalue);
+            if (selectedcarrier == 'AA') {
+                initialformatnumber = '4';
+            }
+            else {
+                initialformatnumber = '3';
+            }
             // need conditional logic to determine if the command starts with 3 or 4 based on the carrier of the segment selected 
-            var command = "3DOCS" + segmentvalue + "/" + documenttype + "/" + countryofissue.toUpperCase() + "/" + documentnumber + "/"
+            var command = initialformatnumber + "DOCS" + segmentvalue + "/" + documenttype + "/" + countryofissue.toUpperCase() + "/" + documentnumber + "/"
                 + countrynacionality.toUpperCase() + "/" + dateofbirth.toUpperCase() + "/" + gender + "/" + documentexpdate.toUpperCase() + "/" + lastname.toUpperCase() + "/" + firstname.toUpperCase()
                 + middlename.toUpperCase() + "-" + passenger;
             // this.srwApi.executeInEmu(command,true,true,{} ); 
@@ -170,11 +178,11 @@ define("pricingwidget/views/PricingView", ["require", "exports", "sabre-ngv-app/
             */
             if (this.validateFields()) {
                 console.log(command);
-                //   cf(command).send(); 
-                this.srwSyncpi.executeInEmu(command, true, true);
+                Context_2.cf(command).send();
+                // this.srwSyncpi.executeInEmu(command,true,true); 
                 _super.prototype.triggerOnEventBus.call(this, 'close-modal');
             }
-            console.log(this.getCarrier(segmentvalue));
+            // console.log(this.getCarrier(segmentvalue)); 
         };
         PricingView.prototype.validateFields = function () {
             var validatedcorrectly = true;
@@ -238,7 +246,7 @@ define("pricingwidget/views/PricingView", ["require", "exports", "sabre-ngv-app/
     ], PricingView);
     exports.PricingView = PricingView;
 });
-define("pricingwidget/Main", ["require", "exports", "sabre-ngv-core/modules/Module", "sabre-ngv-app/app/services/impl/DrawerService", "pricingwidget/Context", "sabre-ngv-core/configs/drawer/LargeWidgetDrawerConfig", "pricingwidget/views/PricingTile", "pricingwidget/views/PricingView"], function (require, exports, Module_1, DrawerService_1, Context_2, LargeWidgetDrawerConfig_1, PricingTile_1, PricingView_1) {
+define("pricingwidget/Main", ["require", "exports", "sabre-ngv-core/modules/Module", "sabre-ngv-app/app/services/impl/DrawerService", "pricingwidget/Context", "sabre-ngv-core/configs/drawer/LargeWidgetDrawerConfig", "pricingwidget/views/PricingTile", "pricingwidget/views/PricingView"], function (require, exports, Module_1, DrawerService_1, Context_3, LargeWidgetDrawerConfig_1, PricingTile_1, PricingView_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var Main = (function (_super) {
@@ -254,21 +262,21 @@ define("pricingwidget/Main", ["require", "exports", "sabre-ngv-core/modules/Modu
             /*
                This will add our configuration to the pricing response
             */
-            Context_2.getService(DrawerService_1.DrawerService).addConfig(['post-pricing-response-widget'], drawerConfig);
+            Context_3.getService(DrawerService_1.DrawerService).addConfig(['post-pricing-response-widget'], drawerConfig);
         };
         return Main;
     }(Module_1.Module));
     exports.Main = Main;
 });
 ///<amd-module name="pricingwidget" />
-define("pricingwidget", ["require", "exports", "pricingwidget/Main", "pricingwidget/Context"], function (require, exports, Main_1, Context_3) {
+define("pricingwidget", ["require", "exports", "pricingwidget/Main", "pricingwidget/Context"], function (require, exports, Main_1, Context_4) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var Module_pricingwidget = (function (_super) {
         __extends(Module_pricingwidget, _super);
         function Module_pricingwidget(manifest) {
             var _this = _super.call(this, manifest) || this;
-            Context_3.context.setModule(_this);
+            Context_4.context.setModule(_this);
             return _this;
         }
         return Module_pricingwidget;

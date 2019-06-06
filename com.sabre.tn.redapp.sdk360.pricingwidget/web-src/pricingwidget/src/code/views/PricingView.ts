@@ -184,9 +184,18 @@ this.render();
           
            middlename = "/"+this.$el.find('#middlename').val(); 
        }
+       let initialformatnumber :string 
+       
+       let selectedcarrier :string = this.getCarrier(segmentvalue); 
+
+       if(selectedcarrier=='AA'){
+           initialformatnumber='4'; 
+       }else {
+           initialformatnumber='3';
+       }
 
        // need conditional logic to determine if the command starts with 3 or 4 based on the carrier of the segment selected 
-       let command :string = "3DOCS"+segmentvalue+"/"+documenttype+"/"+countryofissue.toUpperCase()+"/"+documentnumber+"/"
+       let command :string = initialformatnumber+"DOCS"+segmentvalue+"/"+documenttype+"/"+countryofissue.toUpperCase()+"/"+documentnumber+"/"
        +countrynacionality.toUpperCase()+"/"+dateofbirth.toUpperCase()+"/"+gender+"/"+documentexpdate.toUpperCase()+"/"+lastname.toUpperCase()+"/"+firstname.toUpperCase()
        +middlename.toUpperCase()+"-"+passenger; 
 
@@ -198,15 +207,15 @@ this.render();
 
       if(this.validateFields()){
         console.log(command);
-           //   cf(command).send(); 
+             cf(command).send(); 
 
-             this.srwSyncpi.executeInEmu(command,true,true); 
+            // this.srwSyncpi.executeInEmu(command,true,true); 
              super.triggerOnEventBus('close-modal');
       }
 
 
 
-    console.log(this.getCarrier(segmentvalue)); 
+   // console.log(this.getCarrier(segmentvalue)); 
     }
 
 
