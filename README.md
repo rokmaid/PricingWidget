@@ -9,7 +9,7 @@ The tile widget will open an HTML pop up dialog that will allow the agent to ent
 ## Technologies used 
 •	Bootstrap 
 •	TypeScript 
-•	Sabre Web Services 
+•	Sabre APIs
 
 
 ## Running RedApp on Eclipse Plugin development
